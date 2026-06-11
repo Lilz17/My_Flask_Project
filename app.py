@@ -10,7 +10,13 @@ collection = db["todo_items"]
 
 @app.route('/')
 def home():
-    return "Home Page"
+    return """
+    <h1>HOME PAGE</h1>
+    <p>Welcome to my humble Flask App!</p>
+    <ul>
+        <li><a href="/todo">Go to To-Do Page</a></li>
+    </ul>
+    """
 
 # Route to render the frontend To-Do page created in master_1
 @app.route('/todo')
