@@ -1,10 +1,13 @@
-from flask import Flask
+from flask import Flask, jsonify
+import json
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World! This is my Flask AI app.'
+    with open('data.json', 'r') as f:
+        data = json.load(f)
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(debug=True)
